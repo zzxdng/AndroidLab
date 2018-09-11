@@ -5,9 +5,13 @@ import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,7 +26,7 @@ public class RecyclerViewFooterActivity extends AppCompatActivity implements Rec
 
     private RecyclerViewFooterAdapter mAdapter;
     private RecyclerView mRecyclerView;
-    private List<String> mDataList;
+    private List<String> mDataList  = new ArrayList<>();
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
     private boolean mIsLoadingData = false;
@@ -38,7 +42,7 @@ public class RecyclerViewFooterActivity extends AppCompatActivity implements Rec
     }
 
     private void initData() {
-        mDataList = new ArrayList<>();
+        mDataList.clear();
         for(int i = 0; i < 20 ; i++){
             mDataList.add(i, "第"+ i +"项");
         }
@@ -127,5 +131,28 @@ public class RecyclerViewFooterActivity extends AppCompatActivity implements Rec
             Toast.makeText(this, "删除失败！", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.recycler_menu_layout, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.liner:
+                mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+                break;
+
+            case R.id.grid:
+                mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+                break;
+        }
+        initData();
+        mRecyclerView.setAdapter(mAdapter);
+        return super.onOptionsItemSelected(item);
     }
 }
