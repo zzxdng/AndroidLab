@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -70,6 +71,8 @@ public class RecyclerViewFooterActivity extends AppCompatActivity implements Rec
         mRecyclerView = findViewById(R.id.example_string_recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(linearLayoutManager);//选择使用竖直的布局
+        //添加分隔线
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         mRecyclerView.addOnScrollListener(new EndlessOnScrollListener(linearLayoutManager) {
             @Override
             public void onLoadMore(int currentPage) {
