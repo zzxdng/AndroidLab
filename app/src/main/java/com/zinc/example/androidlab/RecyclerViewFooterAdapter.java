@@ -56,14 +56,35 @@ public class RecyclerViewFooterAdapter extends RecyclerView.Adapter {
         }
     }
 
+    public interface OnItemClickListener{
+        void onItemClick(View view, int position);
+        void onItemLongClick(View view, int position);
+    }
 
-
+    //添加点击事件
+    private OnItemClickListener onItemClickListener;
+    public void setOnItemClickListener(RecyclerViewFooterAdapter.OnItemClickListener listener){
+        this.onItemClickListener = listener;
+    }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         if(holder instanceof NormalViewHolder){
-            NormalViewHolder normalViewHolder = (NormalViewHolder)holder;
+            final NormalViewHolder normalViewHolder = (NormalViewHolder)holder;
             normalViewHolder.contentTv.setText(mDataList.get(position));
+            normalViewHolder.contentTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onItemClickListener.onItemClick(v, normalViewHolder.getAdapterPosition());
+                }
+            });
+            normalViewHolder.contentTv.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    onItemClickListener.onItemLongClick(v, normalViewHolder.getAdapterPosition());
+                    return true;
+                }
+            });
         }else if (holder instanceof FooterViewHolder){
             FooterViewHolder footerViewHolder = (FooterViewHolder)holder;
             switch (mLoadingStatus){
@@ -95,6 +116,32 @@ public class RecyclerViewFooterAdapter extends RecyclerView.Adapter {
 
     public void setLoadingStatus(int status){
         mLoadingStatus = status;
+    }
+
+    /**添加一项数据**/
+    public boolean addItem(int position, String msg){
+        if(position < mDataList.size() && position >= 0){
+            mDataList.add(position, msg);
+            notifyItemInserted(position);
+            return true;
+        }
+        return false;
+    }
+
+    /**删除一项数据**/
+    public String removeItem(int position){
+        String temp = null;
+        if(position < mDataList.size() && position >= 0){
+            temp = mDataList.remove(position);
+            notifyItemRemoved(position);
+        }
+        return temp;
+    }
+
+    /**清除所有数据**/
+    public void clearAll(){
+        mDataList.clear();
+        notifyDataSetChanged();
     }
 
     private class FooterViewHolder extends RecyclerView.ViewHolder {
