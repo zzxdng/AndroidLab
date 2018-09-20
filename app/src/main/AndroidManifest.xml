@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".RecyclerViewExampleActivity" />
         <activity android:name=".RecyclerViewFooterActivity" />
-        <activity android:name=".expandablelistdemo.ExpandableListViewDemoActivity"></activity>
+        <activity android:name=".expandablelistdemo.view.ExpandableListViewDemoActivity"></activity>
     </application>
 
 </manifest>

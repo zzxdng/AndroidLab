@@ -1,11 +1,11 @@
 package com.zinc.example.androidlab;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.zinc.example.androidlab.expandablelistdemo.ExpandableListViewDemoActivity;
+import com.zinc.example.androidlab.expandablelistdemo.view.ExpandableListViewDemoActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
