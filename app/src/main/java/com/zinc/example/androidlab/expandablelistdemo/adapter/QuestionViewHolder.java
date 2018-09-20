@@ -13,14 +13,35 @@ import com.zinc.example.androidlab.R;
  */
 public class QuestionViewHolder extends GroupViewHolder{
 
-    private TextView qustionTitle;
+    private TextView questionTitle;
+    private ICollapseListener listener;
 
     QuestionViewHolder(View itemView) {
         super(itemView);
-        qustionTitle = itemView.findViewById(R.id.question_title_tv);
+        questionTitle = itemView.findViewById(R.id.question_title_tv);
+    }
+
+    public static QuestionViewHolder getInstance(View itemView, ICollapseListener listener){
+        QuestionViewHolder questionViewHolder = new QuestionViewHolder(itemView);
+        questionViewHolder.listener = listener;
+        return questionViewHolder;
     }
 
     public void setQuestionTitle(com.thoughtbot.expandablerecyclerview.models.ExpandableGroup expandableGroup){
-        qustionTitle.setText(expandableGroup.getTitle());
+        questionTitle.setText(expandableGroup.getTitle());
     }
+
+    public void expand() {
+        listener.expand();
+    }
+
+    public void collapse() {
+        listener.collapse();
+    }
+
+    public interface ICollapseListener{
+        void expand();
+        void collapse();
+    }
+
 }
