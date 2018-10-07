@@ -1,6 +1,6 @@
 package com.zinc.example.androidlab.expandablelistdemo.adapter;
 
-import com.zinc.example.androidlab.expandablelistdemo.modle.ExpandAnswerBean;
+import com.zinc.example.androidlab.expandablelistdemo.model.ExpandAnswerBean;
 
 import java.util.List;
 

@@ -14,8 +14,8 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
-import com.zinc.example.androidlab.expandablelistdemo.modle.ExpandAnswerBean;
 import com.zinc.example.androidlab.R;
+import com.zinc.example.androidlab.expandablelistdemo.model.ExpandAnswerBean;
 
 /**
  * author： zhao zhongxin

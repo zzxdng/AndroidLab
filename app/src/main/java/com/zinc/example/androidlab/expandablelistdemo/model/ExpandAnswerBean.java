@@ -1,4 +1,4 @@
-package com.zinc.example.androidlab.expandablelistdemo.modle;
+package com.zinc.example.androidlab.expandablelistdemo.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

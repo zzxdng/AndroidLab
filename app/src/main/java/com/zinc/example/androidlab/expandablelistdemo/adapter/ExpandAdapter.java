@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.thoughtbot.expandablerecyclerview.ExpandableRecyclerViewAdapter;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 import com.zinc.example.androidlab.R;
-import com.zinc.example.androidlab.expandablelistdemo.modle.ExpandAnswerBean;
+import com.zinc.example.androidlab.expandablelistdemo.model.ExpandAnswerBean;
 
 import java.util.List;
 

@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.zinc.example.androidlab.expandablelistdemo.adapter.ExpandableQuestionGroup;
 import com.zinc.example.androidlab.expandablelistdemo.contract.ExpandableListViewContract;
-import com.zinc.example.androidlab.expandablelistdemo.modle.ExpandAnswerBean;
+import com.zinc.example.androidlab.expandablelistdemo.model.ExpandAnswerBean;
 
 import java.util.ArrayList;
 import java.util.Arrays;
