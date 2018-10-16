@@ -22,7 +22,8 @@
         <activity android:name=".RecyclerViewFooterActivity" />
         <activity android:name=".expandablelistdemo.view.ExpandableListViewDemoActivity" />
         <activity android:name=".myexpandablelistview.MyExpandableListView" />
-        <activity android:name=".rxjavademo.RxJavaDemoMainActivity"></activity>
+        <activity android:name=".rxjavademo.RxJavaDemoMainActivity" />
+        <activity android:name=".viewpagerdemo.ViewPagerDemoActivity"></activity>
     </application>
 
 </manifest>
