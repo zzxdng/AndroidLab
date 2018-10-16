@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.zinc.example.androidlab.expandablelistdemo.view.ExpandableListViewDemoActivity;
 import com.zinc.example.androidlab.myexpandablelistview.MyExpandableListView;
+import com.zinc.example.androidlab.rxjavademo.RxJavaDemoMainActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.recycler_footer_btn_id).setOnClickListener(this);
         findViewById(R.id.expandable_recycler_btn).setOnClickListener(this);
         findViewById(R.id.my_expandable_btn).setOnClickListener(this);
+        findViewById(R.id.btn_rxjava_demo).setOnClickListener(this);
     }
 
     @Override
@@ -38,6 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.my_expandable_btn:
                 intent = new Intent(MainActivity.this, MyExpandableListView.class);
+                break;
+
+            case R.id.btn_rxjava_demo:
+                intent = new Intent(MainActivity.this, RxJavaDemoMainActivity.class);
                 break;
 
             default:

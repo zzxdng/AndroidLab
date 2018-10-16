@@ -9,35 +9,42 @@
 
     <Button
         android:id="@+id/recycler_btn_id"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="RecyclerView"
         android:textAllCaps="false"/>
     <Button
         android:id="@+id/recycler_footer_btn_id"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="RecyclerFooterView"
         android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/volley_btn_id"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Volley"
         android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/expandable_recycler_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ExpandableRecycler"
         android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/my_expandable_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="MyExpandableListView"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_rxjava_demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RxJavaDemo"
         android:textAllCaps="false"/>
 </LinearLayout>
