@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.zinc.example.androidlab.expandablelistdemo.view.ExpandableListViewDemoActivity;
+import com.zinc.example.androidlab.load_sir_demo.LoadSirDemoActivity;
 import com.zinc.example.androidlab.myexpandablelistview.MyExpandableListView;
 import com.zinc.example.androidlab.rxjavademo.RxJavaDemoMainActivity;
 
@@ -53,5 +54,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(intent != null){
             startActivity(intent);
         }
+    }
+
+    public void showLoadSirDemo(View view) {
+        startActivityFun(LoadSirDemoActivity.class);
+    }
+
+    private void startActivityFun(Class<?>  activityClass) {
+        startActivity(new Intent(MainActivity.this,activityClass));
     }
 }
