@@ -25,7 +25,8 @@
         <activity android:name=".myexpandablelistview.MyExpandableListView" />
         <activity android:name=".rxjavademo.RxJavaDemoMainActivity" />
         <activity android:name=".viewpagerdemo.ViewPagerDemoActivity" />
-        <activity android:name=".load_sir_demo.LoadSirDemoActivity"></activity>
+        <activity android:name=".load_sir_demo.LoadSirDemoActivity" />
+        <activity android:name=".svga_play_demo.SVGAPlayDemoActivity"></activity>
     </application>
 
 </manifest>
