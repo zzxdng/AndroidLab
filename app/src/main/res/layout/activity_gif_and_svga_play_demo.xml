@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".svga_play_demo.GIFAndSVGAPlayDemoActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="playGIF"
+        android:text="GIF Play" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="playSvga"
+        android:text="SVGA Play" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="playGifAndSVGA"
+        android:text="GIF And SVGA play" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/iv_gif_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#ff00ff"
+            />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gif_img_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ff00ff"
+            android:visibility="gone"/>
+
+        <com.opensource.svgaplayer.SVGAImageView
+            android:id="@+id/iv_svga_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:source="test.svga"
+            app:autoPlay="true"
+            android:background="#ffff00"
+            android:scaleType="centerCrop"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

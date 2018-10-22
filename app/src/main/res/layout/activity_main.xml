@@ -56,4 +56,12 @@
         android:text="LoadSirDemo"
         android:textAllCaps="false" />
 
+    <Button
+        android:id="@+id/btn_gif_and_svga_demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showGifAndSVAGDemo"
+        android:text="GIF And SVGA Demo"
+        android:textAllCaps="false" />
+
 </LinearLayout>
