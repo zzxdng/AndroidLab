@@ -9,6 +9,7 @@ import com.zinc.example.androidlab.expandablelistdemo.view.ExpandableListViewDem
 import com.zinc.example.androidlab.load_sir_demo.LoadSirDemoActivity;
 import com.zinc.example.androidlab.myexpandablelistview.MyExpandableListView;
 import com.zinc.example.androidlab.rxjavademo.RxJavaDemoMainActivity;
+import com.zinc.example.androidlab.viewpagerdemo.ViewPagerDemoActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -58,6 +59,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void showLoadSirDemo(View view) {
         startActivityFun(LoadSirDemoActivity.class);
+    }
+
+    public void shoeViewpagerDemo(View view) {
+        startActivityFun(ViewPagerDemoActivity.class);
     }
 
     private void startActivityFun(Class<?>  activityClass) {
