@@ -10,4 +10,10 @@
         android:layout_centerInParent="true"
         android:background="@drawable/loading"/>
 
+    <TextView
+        android:id="@+id/tv_net_loading_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="正在努力加载中"/>
+
 </RelativeLayout>

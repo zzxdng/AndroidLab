@@ -26,7 +26,18 @@
         <activity android:name=".rxjavademo.RxJavaDemoMainActivity" />
         <activity android:name=".viewpagerdemo.ViewPagerDemoActivity" />
         <activity android:name=".load_sir_demo.LoadSirDemoActivity" />
-        <activity android:name=".svga_play_demo.GIFAndSVGAPlayDemoActivity"></activity>
+        <activity android:name=".svga_play_demo.GIFAndSVGAPlayDemoActivity" />
+        <activity android:name=".intent_action_demo.IntentActionDemoActivity" />
+        <activity android:name=".glide_demo.GlideDemoActivity" />
+        <activity android:name=".flexboxlayout_manager_demo.FlexBoxLayoutManagerActivity" />
+        <activity android:name=".spannable_string_demo.SpannableStringDemoActivity" />
+        <activity
+            android:name=".draft.DraftActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".draft.ExampleAActivity" />
+        <activity android:name=".draft.ExampleBActivity" />
+        <activity android:name=".image.lottie.LottieDemoActivity" />
+        <activity android:name=".database.realm.RealmDemoActivity"></activity>
     </application>
 
 </manifest>

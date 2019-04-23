@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".intent_action_demo.IntentActionDemoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_intent_action_valid_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openValidAction"
+            android:text="打开有效activity" />
+
+        <Button
+            android:id="@+id/btn_intent_action_invalid_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openInvalidAction"
+            android:text="打开无效activity" />
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

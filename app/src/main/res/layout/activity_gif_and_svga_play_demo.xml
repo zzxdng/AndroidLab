@@ -35,24 +35,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone"
-            android:background="#ff00ff"
             />
 
         <pl.droidsonroids.gif.GifImageView
             android:id="@+id/gif_img_id"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#ff00ff"
             android:visibility="gone"/>
 
         <com.opensource.svgaplayer.SVGAImageView
             android:id="@+id/iv_svga_id"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:source="test.svga"
+            android:layout_width="1020dp"
+            android:layout_height="610dp"
             app:autoPlay="true"
-            android:background="#ffff00"
             android:scaleType="centerCrop"
+            android:layout_centerInParent="true"
             android:visibility="gone"/>
 
     </RelativeLayout>

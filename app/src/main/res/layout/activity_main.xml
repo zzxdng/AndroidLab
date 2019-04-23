@@ -6,62 +6,128 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/draft_btn_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Draft"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/recycler_btn_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RecyclerView"
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/recycler_footer_btn_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RecyclerFooterView"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/volley_btn_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Volley"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/expandable_recycler_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ExpandableRecycler"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/my_expandable_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MyExpandableListView"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_rxjava_demo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RxJavaDemo"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_loadsir_demo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="showLoadSirDemo"
+                android:text="LoadSirDemo"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_gif_and_svga_demo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="showGifAndSVAGDemo"
+                android:text="GIF And SVGA Demo"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_viewpager_demo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="showViewpagerDemo"
+                android:text="ViewPagerDemo"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_intent_action_demo_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="intentActionOpen"
+                android:text="Intent Action Open"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_glide_demo_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="openGlideDemo"
+                android:text="Glide Demo"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_lottie_demo_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lottie Demo"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_realm_demo_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Realm Demo"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
 
     <Button
-        android:id="@+id/recycler_btn_id"
+        android:id="@+id/btn_viewpager_demo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="RecyclerView"
-        android:textAllCaps="false"/>
-    <Button
-        android:id="@+id/recycler_footer_btn_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="RecyclerFooterView"
-        android:textAllCaps="false"/>
-
-    <Button
-        android:id="@+id/volley_btn_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Volley"
-        android:textAllCaps="false"/>
-
-    <Button
-        android:id="@+id/expandable_recycler_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ExpandableRecycler"
-        android:textAllCaps="false"/>
-
-    <Button
-        android:id="@+id/my_expandable_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MyExpandableListView"
-        android:textAllCaps="false"/>
-
-    <Button
-        android:id="@+id/btn_rxjava_demo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="RxJavaDemo"
-        android:textAllCaps="false"/>
-
-    <Button
-        android:id="@+id/btn_loadsir_demo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showLoadSirDemo"
-        android:text="LoadSirDemo"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btn_gif_and_svga_demo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showGifAndSVAGDemo"
-        android:text="GIF And SVGA Demo"
+        android:onClick="shoeViewpagerDemo"
+        android:text="ViewPagerDemo"
         android:textAllCaps="false" />
 
 </LinearLayout>
