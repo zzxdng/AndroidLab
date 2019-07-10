@@ -8,8 +8,6 @@ import com.zinc.example.androidlab.database.realm.CustomMigration;
 import com.zinc.example.androidlab.load_sir_demo.callback.ErrorCallback;
 import com.zinc.example.androidlab.load_sir_demo.callback.LoadingCallback;
 
-import java.io.File;
-
 import io.realm.DynamicRealm;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;

@@ -7,7 +7,6 @@ import io.realm.FieldAttribute;
 import io.realm.RealmMigration;
 import io.realm.RealmObjectSchema;
 import io.realm.RealmSchema;
-import io.realm.annotations.PrimaryKey;
 
 /**
  * author： zhao zhongxin

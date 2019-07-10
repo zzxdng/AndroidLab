@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zinc.example.androidlab">
+          package="com.zinc.example.androidlab">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--跳转作业帮-->
+    <uses-permission android:name="com.baidu.homework.permission.PIC_SEARCH"/>
 
     <application
         android:name=".app.CusApplication"
@@ -14,30 +16,32 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".RecyclerViewExampleActivity" />
-        <activity android:name=".RecyclerViewFooterActivity" />
-        <activity android:name=".expandablelistdemo.view.ExpandableListViewDemoActivity" />
-        <activity android:name=".myexpandablelistview.MyExpandableListView" />
-        <activity android:name=".rxjavademo.RxJavaDemoMainActivity" />
-        <activity android:name=".viewpagerdemo.ViewPagerDemoActivity" />
-        <activity android:name=".load_sir_demo.LoadSirDemoActivity" />
-        <activity android:name=".svga_play_demo.GIFAndSVGAPlayDemoActivity" />
-        <activity android:name=".intent_action_demo.IntentActionDemoActivity" />
-        <activity android:name=".glide_demo.GlideDemoActivity" />
-        <activity android:name=".flexboxlayout_manager_demo.FlexBoxLayoutManagerActivity" />
-        <activity android:name=".spannable_string_demo.SpannableStringDemoActivity" />
+        <activity android:name=".RecyclerViewExampleActivity"/>
+        <activity android:name=".RecyclerViewFooterActivity"/>
+        <activity android:name=".expandablelistdemo.view.ExpandableListViewDemoActivity"/>
+        <activity android:name=".myexpandablelistview.MyExpandableListView"/>
+        <activity android:name=".rxjavademo.RxJavaDemoMainActivity"/>
+        <activity android:name=".viewpagerdemo.ViewPagerDemoActivity"/>
+        <activity android:name=".load_sir_demo.LoadSirDemoActivity"/>
+        <activity android:name=".svga_play_demo.GIFAndSVGAPlayDemoActivity"/>
+        <activity android:name=".intent_action_demo.IntentActionDemoActivity"/>
+        <activity android:name=".glide_demo.GlideDemoActivity"/>
+        <activity android:name=".flexboxlayout_manager_demo.FlexBoxLayoutManagerActivity"/>
+        <activity android:name=".spannable_string_demo.SpannableStringDemoActivity"/>
         <activity
             android:name=".draft.DraftActivity"
-            android:launchMode="singleTask" />
-        <activity android:name=".draft.ExampleAActivity" />
-        <activity android:name=".draft.ExampleBActivity" />
-        <activity android:name=".image.lottie.LottieDemoActivity" />
-        <activity android:name=".database.realm.RealmDemoActivity"></activity>
+            android:launchMode="singleTask"/>
+        <activity android:name=".draft.ExampleAActivity"/>
+        <activity android:name=".draft.ExampleBActivity"/>
+        <activity android:name=".image.lottie.LottieDemoActivity"/>
+        <activity android:name=".database.realm.RealmDemoActivity"/>
+        <activity android:name=".custom_view.canvas_draw_view.CanvasDrawViewDemoActivity">
+        </activity>
     </application>
 
 </manifest>

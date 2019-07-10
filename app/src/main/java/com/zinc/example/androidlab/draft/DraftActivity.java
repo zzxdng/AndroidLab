@@ -2,35 +2,35 @@ package com.zinc.example.androidlab.draft;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
+import android.os.Bundle;
+import android.os.Environment;
 import android.renderscript.Allocation;
-import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jakewharton.rxbinding.view.RxView;
 import com.zinc.example.androidlab.R;
+import com.zinc.example.androidlab.custom_view.canvas_draw_view.CanvasDrawViewDemoActivity;
+import com.zinc.example.androidlab.util.ShellUtils;
 
+import java.io.File;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -53,12 +53,37 @@ public class DraftActivity extends AppCompatActivity {
         RxView.clicks(findViewById(R.id.btn_start_for_result_id)).subscribe(new Action1<Void>() {
             @Override
             public void call(Void aVoid) {
-//                startActivityForResult(new Intent(DraftActivity.this, ExampleAActivity.class), 0);
+                startZuoYeBang("");
+//                startActivityForResult(new Intent(DraftActivity.this, CanvasDrawViewDemoActivity.class), 0);
 //                showToast(getApplicationContext(), "test");
 //                showDialog();
-                testRegex();
+//                testRegex();
             }
         });
+    }
+
+
+    private void startZuoYeBang(String fname) {
+        fname = Environment.getExternalStorageDirectory()+"/"+"test.jpg";
+        File file = new File(fname);
+        if (file == null || !file.exists() || file.length() == 0 || !file.getName().endsWith(".jpg")) {
+//            this.mainControl.showToast("要输入的图片必须是一个可以读写的JPG文件.");
+            Log.e("TAG", "要输入的图片必须是一个可以读写的JPG文件.");
+            return;
+        }
+        file.setReadable(true, false);
+        try {
+            Intent intent = new Intent("android.intent.action.VIEW");
+            intent.setComponent(new ComponentName("com.baidu.homework", "com.baidu.homework.activity.homework.AutoAnswerActivity"));
+            intent.putExtra("INPUT_IMG_FILE", file.getPath());
+            intent.putExtra("INPUT_USE_OCR", true);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.addCategory(Intent.CATEGORY_LAUNCHER);
+            this.startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void testRegex() {

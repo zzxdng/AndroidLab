@@ -8,11 +8,10 @@ import android.view.View;
 import com.jakewharton.rxbinding.view.RxView;
 import com.zinc.example.androidlab.database.realm.RealmDemoActivity;
 import com.zinc.example.androidlab.draft.DraftActivity;
+import com.zinc.example.androidlab.expandablelistdemo.view.ExpandableListViewDemoActivity;
 import com.zinc.example.androidlab.glide_demo.GlideDemoActivity;
-import com.zinc.example.androidlab.image.lottie.LottieDemo;
 import com.zinc.example.androidlab.image.lottie.LottieDemoActivity;
 import com.zinc.example.androidlab.intent_action_demo.IntentActionDemoActivity;
-import com.zinc.example.androidlab.expandablelistdemo.view.ExpandableListViewDemoActivity;
 import com.zinc.example.androidlab.load_sir_demo.LoadSirDemoActivity;
 import com.zinc.example.androidlab.myexpandablelistview.MyExpandableListView;
 import com.zinc.example.androidlab.rxjavademo.RxJavaDemoMainActivity;
@@ -20,7 +19,6 @@ import com.zinc.example.androidlab.svga_play_demo.GIFAndSVGAPlayDemoActivity;
 import com.zinc.example.androidlab.viewpagerdemo.ViewPagerDemoActivity;
 
 import rx.functions.Action1;
-import com.zinc.example.androidlab.viewpagerdemo.ViewPagerDemoActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -95,10 +93,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void showViewpagerDemo(View view) {
-        startActivityFun(ViewPagerDemoActivity.class);
-    }
-
-    public void shoeViewpagerDemo(View view) {
         startActivityFun(ViewPagerDemoActivity.class);
     }
 

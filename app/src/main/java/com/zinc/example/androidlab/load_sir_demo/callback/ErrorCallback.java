@@ -1,7 +1,6 @@
 package com.zinc.example.androidlab.load_sir_demo.callback;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
