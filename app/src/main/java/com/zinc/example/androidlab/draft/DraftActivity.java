@@ -23,6 +23,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.billy.cc.core.component.CC;
 import com.jakewharton.rxbinding.view.RxView;
 import com.zinc.example.androidlab.R;
 import com.zinc.example.androidlab.custom_view.canvas_draw_view.CanvasDrawViewDemoActivity;
@@ -51,15 +52,25 @@ public class DraftActivity extends AppCompatActivity {
 //        applyBlur();
 
         RxView.clicks(findViewById(R.id.btn_start_for_result_id)).subscribe(new Action1<Void>() {
+
             @Override
             public void call(Void aVoid) {
-                startZuoYeBang("");
+//                startZuoYeBang("");
 //                startActivityForResult(new Intent(DraftActivity.this, CanvasDrawViewDemoActivity.class), 0);
 //                showToast(getApplicationContext(), "test");
 //                showDialog();
 //                testRegex();
+                startCCExample();
             }
         });
+    }
+
+    private void startCCExample(){
+        //或 异步调用，不需要回调结果
+        String callId = CC.obtainBuilder("test_module")
+                .setActionName("showActivity")
+                .build()
+                .callAsync();
     }
 
 

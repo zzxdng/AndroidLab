@@ -3,6 +3,7 @@ package com.zinc.example.androidlab.app;
 import android.app.Application;
 import android.util.Log;
 
+import com.billy.cc.core.component.CC;
 import com.kingja.loadsir.core.LoadSir;
 import com.zinc.example.androidlab.database.realm.CustomMigration;
 import com.zinc.example.androidlab.load_sir_demo.callback.ErrorCallback;
@@ -26,7 +27,12 @@ public class CusApplication extends Application {
         super.onCreate();
         initLoadSir();
         initRealm();
+        initCC();
 
+    }
+
+    private void initCC() {
+        CC.enableDebug(true); // 默认是false: 关闭状态
     }
 
     private void initLoadSir() {

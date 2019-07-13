@@ -1,4 +1,5 @@
-apply plugin: 'com.android.application'
+ext.mainApp = true //标记为主app module
+apply from: rootProject.file('cc-settings-2.gradle')
 apply plugin: 'realm-android'
 
 android {
@@ -45,4 +46,6 @@ dependencies {
 
     //lottie
     implementation 'com.airbnb.android:lottie:2.0.0-beta3'
+
+    addComponent 'testmodule'
 }
