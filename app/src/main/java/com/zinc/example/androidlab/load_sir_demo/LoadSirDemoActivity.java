@@ -50,7 +50,7 @@ public class LoadSirDemoActivity extends AppCompatActivity {
             @Override
             public void onReload(View v) {
                 mLoadService.showCallback(LoadingCallback.class);
-                ((TextView)findViewById(R.id.tv_net_loading_hint)).setText("已更改！");
+//                ((TextView)findViewById(R.id.tv_net_loading_hint)).setText("已更改！");
                 //模拟网络加载
                 Observable.timer(5, TimeUnit.SECONDS).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(new Action1<Long>() {
                     @Override

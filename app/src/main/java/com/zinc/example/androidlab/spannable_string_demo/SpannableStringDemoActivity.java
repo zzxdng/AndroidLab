@@ -10,6 +10,6 @@ public class SpannableStringDemoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_spannable_string_demo);
+//        setContentView(R.layout.activity_spannable_string_demo);
     }
 }
