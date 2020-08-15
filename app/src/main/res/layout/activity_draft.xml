@@ -6,6 +6,16 @@
     android:orientation="vertical"
     tools:context=".draft.DraftActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="100dp"
+        android:singleLine="true"
+        android:ellipsize="start"
+        android:textDirection="ltr"
+        android:text="比如说，有一段文字是：我要学英语"
+        />
+
     <Button
         android:id="@+id/btn_start_for_result_id"
         android:layout_width="match_parent"
@@ -16,6 +26,7 @@
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <ImageView
             android:id="@+id/blur_img_id"
             android:layout_width="wrap_content"

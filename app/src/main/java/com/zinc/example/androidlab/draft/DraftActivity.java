@@ -1,10 +1,15 @@
 package com.zinc.example.androidlab.draft;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.usage.UsageStats;
+import android.app.usage.UsageStatsManager;
+import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
@@ -15,6 +20,8 @@ import android.renderscript.Allocation;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -23,30 +30,95 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.billy.cc.core.component.CC;
 import com.jakewharton.rxbinding.view.RxView;
 import com.zinc.example.androidlab.R;
 import com.zinc.example.androidlab.custom_view.canvas_draw_view.CanvasDrawViewDemoActivity;
+import com.zinc.example.androidlab.service_demo.ServiceDemoActivity;
+import com.zinc.example.androidlab.util.FileUtils;
 import com.zinc.example.androidlab.util.ShellUtils;
 
 import java.io.File;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import rx.functions.Action1;
 
+
 public class DraftActivity extends AppCompatActivity {
+
+    public static final String SD_PATH =  Environment.getExternalStorageDirectory()+"";
+    private static HashMap<String, OuterClass.InnerClass> map = new HashMap<>();
 
     private ImageView mImageView;
     private View mView;
+
+    static {
+        map.put("1", new OuterClass.InnerClass(){
+
+            @Override
+            void printName() {
+                System.out.println("zzx "+"printName: "+"1");
+            }
+        });
+
+        map.put("2", new OuterClass.InnerClass(){
+
+            @Override
+            void printName() {
+                System.out.println("zzx "+"printName: "+"2");
+            }
+        });
+
+        map.put("3", new OuterClass.InnerClass(){
+
+            @Override
+            void printName() {
+                System.out.println("zzx "+"printName: "+"3");
+            }
+        });
+
+        map.put("4", new OuterClass.InnerClass(){
+
+            @Override
+            void printName() {
+                System.out.println("zzx "+"printName: "+"4");
+            }
+        });
+
+        map.put("5", new OuterClass.InnerClass(){
+
+            @Override
+            void printName() {
+                System.out.println("zzx "+"printName: "+"5");
+            }
+        });
+
+        map.put("6", new OuterClass.InnerClass(){
+
+            @Override
+            void printName() {
+                System.out.println("zzx "+"printName: "+"6");
+            }
+        });
+
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_draft);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE | WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
+        long timeStamp = getIntent().getLongExtra("timestamp", -1);
+
+        Log.i("zzx", "onCreate: 跳转耗时:"+(System.currentTimeMillis() - timeStamp));
+
         mImageView = findViewById(R.id.blur_img_id);
         mView = findViewById(R.id.overlay_view_id);
 //        applyBlur();
@@ -60,17 +132,80 @@ public class DraftActivity extends AppCompatActivity {
 //                showToast(getApplicationContext(), "test");
 //                showDialog();
 //                testRegex();
-                startCCExample();
+//                startCCExample();
+//                startServiceExample();
+//                transformString();
+//                testDex();
+                getPackageDataInfo();
             }
         });
     }
 
+    private void getPackageDataInfo(){
+
+        if(getStatePermission(this)){
+            FileUtils.getPkgSizeInfo(getApplicationContext(), "com.eebbk.askhomework");
+        }
+
+
+    }
+
+    private boolean getStatePermission(Activity activity) {
+        // Here, thisActivity is the current activity
+        if (ContextCompat.checkSelfPermission(activity,
+                Manifest.permission.PACKAGE_USAGE_STATS)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // Permission is not granted
+            // Should we show an explanation?
+            ActivityCompat.requestPermissions(activity,
+                    new String[]{Manifest.permission.PACKAGE_USAGE_STATS},
+                    123);
+        } else {
+            // Permission has already been granted
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean checkAppUsagePermission(Context context) {
+        UsageStatsManager usageStatsManager = (UsageStatsManager) context.getSystemService(Context.USAGE_STATS_SERVICE);
+        if(usageStatsManager == null) {
+            return false;
+        }
+        long currentTime = System.currentTimeMillis();
+        // try to get app usage state in last 1 min
+        List<UsageStats> stats = usageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_DAILY, currentTime - 60 * 1000, currentTime);
+        if (stats.size() == 0) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static void requestAppUsagePermission(Context context) {
+        Intent intent = new Intent(android.provider.Settings.ACTION_USAGE_ACCESS_SETTINGS);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        try {
+            context.startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void testDex() {
+    }
+
+    private void startServiceExample(){
+        startActivity(new Intent(this, ServiceDemoActivity.class));
+    }
+
     private void startCCExample(){
         //或 异步调用，不需要回调结果
-        String callId = CC.obtainBuilder("test_module")
-                .setActionName("showActivity")
-                .build()
-                .callAsync();
+//        String callId = CC.obtainBuilder("test_module")
+//                .setActionName("showActivity")
+//                .build()
+//                .callAsync();
     }
 
 
@@ -115,6 +250,16 @@ public class DraftActivity extends AppCompatActivity {
 
         String[] strings = INPUT.split(REGEX);
         Log.i("zzx", "testRegex: "+ Arrays.asList(strings).toString());
+    }
+
+    private void transformString(){
+
+        String string = FileUtils.readTxt(SD_PATH + File.separator + "temp.txt");
+        Log.i("zzx", "transformString: string="+string);
+        String regex = "/n";
+        String result = string.replaceAll(regex, "\n");
+        FileUtils.addStrToTxt(SD_PATH + File.separator + "result.txt", result);
+        Log.i("zzx", "transformString: string="+result);
     }
 
     @Override

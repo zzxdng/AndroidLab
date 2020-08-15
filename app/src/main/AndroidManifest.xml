@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.zinc.example.androidlab">
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <!--跳转作业帮-->
-    <uses-permission android:name="com.baidu.homework.permission.PIC_SEARCH"/>
+    package="com.zinc.example.androidlab">
 
     <application
         android:name=".app.CusApplication"
@@ -14,34 +10,56 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".recycler_view_demo.RecyclerViewDemoActivity"></activity>
+        <activity android:name=".webview_demo.WebViewDemoActivity" />
+        <activity android:name=".service_demo.ServiceDemoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".RecyclerViewExampleActivity"/>
-        <activity android:name=".RecyclerViewFooterActivity"/>
-        <activity android:name=".expandablelistdemo.view.ExpandableListViewDemoActivity"/>
-        <activity android:name=".myexpandablelistview.MyExpandableListView"/>
-        <activity android:name=".rxjavademo.RxJavaDemoMainActivity"/>
-        <activity android:name=".viewpagerdemo.ViewPagerDemoActivity"/>
-        <activity android:name=".load_sir_demo.LoadSirDemoActivity"/>
-        <activity android:name=".svga_play_demo.GIFAndSVGAPlayDemoActivity"/>
-        <activity android:name=".intent_action_demo.IntentActionDemoActivity"/>
-        <activity android:name=".glide_demo.GlideDemoActivity"/>
-        <activity android:name=".flexboxlayout_manager_demo.FlexBoxLayoutManagerActivity"/>
-        <activity android:name=".spannable_string_demo.SpannableStringDemoActivity"/>
+        <activity android:name=".RecyclerViewExampleActivity" />
+        <activity android:name=".RecyclerViewFooterActivity" />
+        <activity android:name=".expandablelistdemo.view.ExpandableListViewDemoActivity" />
+        <activity android:name=".myexpandablelistview.MyExpandableListView" />
+        <activity android:name=".rxjavademo.RxJavaDemoMainActivity" />
+        <activity android:name=".viewpagerdemo.ViewPagerDemoActivity" />
+        <activity android:name=".load_sir_demo.LoadSirDemoActivity" />
+        <activity android:name=".svga_play_demo.GIFAndSVGAPlayDemoActivity" />
+        <activity android:name=".intent_action_demo.IntentActionDemoActivity" />
+        <activity android:name=".glide_demo.GlideDemoActivity" />
+        <activity android:name=".flexboxlayout_manager_demo.FlexBoxLayoutManagerActivity" />
+        <activity android:name=".spannable_string_demo.SpannableStringDemoActivity" />
         <activity
             android:name=".draft.DraftActivity"
-            android:launchMode="singleTask"/>
-        <activity android:name=".draft.ExampleAActivity"/>
-        <activity android:name=".draft.ExampleBActivity"/>
-        <activity android:name=".image.lottie.LottieDemoActivity"/>
-        <activity android:name=".database.realm.RealmDemoActivity"/>
-        <activity android:name=".custom_view.canvas_draw_view.CanvasDrawViewDemoActivity">
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="com.zinc.example.androidlab.MainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+        <activity android:name=".draft.ExampleAActivity" />
+        <activity android:name=".draft.ExampleBActivity" />
+        <activity android:name=".image.lottie.LottieDemoActivity" />
+        <activity android:name=".database.realm.RealmDemoActivity" />
+        <activity android:name=".custom_view.canvas_draw_view.CanvasDrawViewDemoActivity" />
+
+        <service android:name=".service_demo.CustomService">
+            <intent-filter>
+                <action android:name="com.zinc.example.CustomService" />
+            </intent-filter>
+        </service>
     </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.baidu.homework.permission.PIC_SEARCH" />
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

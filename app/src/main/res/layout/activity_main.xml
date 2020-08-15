@@ -117,6 +117,13 @@
                 android:text="Realm Demo"
                 android:textAllCaps="false" />
 
+            <Button
+                android:id="@+id/btn_wv_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="WebViewDemo"
+                android:textAllCaps="false" />
+
         </LinearLayout>
 
 

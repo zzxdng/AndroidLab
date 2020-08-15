@@ -6,13 +6,36 @@
     android:orientation="vertical"
     tools:context=".image.lottie.LottieDemoActivity">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottie_test_id"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+    <Button
+        android:id="@+id/btn_lottie_play_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="play Scale down"
+        />
+
+    <Button
+        android:id="@+id/btn_lottie_play_origin_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="play Original"
         />
 
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_test_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:id="@+id/btn_lottie_play_small_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="play Small"
+        />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_test_small_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />

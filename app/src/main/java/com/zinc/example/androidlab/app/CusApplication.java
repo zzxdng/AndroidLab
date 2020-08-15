@@ -3,7 +3,7 @@ package com.zinc.example.androidlab.app;
 import android.app.Application;
 import android.util.Log;
 
-import com.billy.cc.core.component.CC;
+import com.didichuxing.doraemonkit.DoraemonKit;
 import com.kingja.loadsir.core.LoadSir;
 import com.zinc.example.androidlab.database.realm.CustomMigration;
 import com.zinc.example.androidlab.load_sir_demo.callback.ErrorCallback;
@@ -28,11 +28,16 @@ public class CusApplication extends Application {
         initLoadSir();
         initRealm();
         initCC();
+        initDokit();
 
     }
 
+    private void initDokit() {
+        DoraemonKit.install(this,null,"pId");
+    }
+
     private void initCC() {
-        CC.enableDebug(true); // 默认是false: 关闭状态
+//        CC.enableDebug(true); // 默认是false: 关闭状态
     }
 
     private void initLoadSir() {

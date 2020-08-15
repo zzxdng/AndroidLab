@@ -1,6 +1,8 @@
 ext.mainApp = true //标记为主app module
-apply from: rootProject.file('cc-settings-2.gradle')
+//apply from: rootProject.file('cc-settings-2.gradle')
+apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
+apply plugin: 'com.didi.dokit'
 
 android {
     compileSdkVersion 27
@@ -47,5 +49,8 @@ dependencies {
     //lottie
     implementation 'com.airbnb.android:lottie:2.0.0-beta3'
 
-    addComponent 'testmodule'
+//    addComponent 'testmodule'
+
+    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:3.0_beta3'
+    releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:3.0_beta3'
 }
