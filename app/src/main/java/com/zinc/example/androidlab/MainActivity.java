@@ -14,9 +14,11 @@ import com.zinc.example.androidlab.image.lottie.LottieDemoActivity;
 import com.zinc.example.androidlab.intent_action_demo.IntentActionDemoActivity;
 import com.zinc.example.androidlab.load_sir_demo.LoadSirDemoActivity;
 import com.zinc.example.androidlab.myexpandablelistview.MyExpandableListView;
+import com.zinc.example.androidlab.push_demo.NotificationActivity;
 import com.zinc.example.androidlab.rxjavademo.RxJavaDemoMainActivity;
 import com.zinc.example.androidlab.svga_play_demo.GIFAndSVGAPlayDemoActivity;
 import com.zinc.example.androidlab.viewpagerdemo.ViewPagerDemoActivity;
+import com.zinc.example.androidlab.webview_demo.WebViewDemoActivity;
 
 import rx.functions.Action1;
 
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         findViewById(R.id.recycler_btn_id).setOnClickListener(this);
         findViewById(R.id.recycler_footer_btn_id).setOnClickListener(this);
@@ -50,6 +53,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void call(Void aVoid) {
                 startActivityFun(RealmDemoActivity.class);
+            }
+        });
+
+        RxView.clicks(findViewById(R.id.btn_wv_id)).subscribe(new Action1<Void>() {
+            @Override
+            public void call(Void aVoid) {
+                startActivityFun(WebViewDemoActivity.class);
+            }
+        });
+
+        RxView.clicks(findViewById(R.id.btn_notification_id)).subscribe(new Action1<Void>() {
+            @Override
+            public void call(Void aVoid) {
+                startActivityFun(NotificationActivity.class);
             }
         });
 
